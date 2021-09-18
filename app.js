@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = 'mongodb+srv://nimren:123@cluster0.0n0h4.mongodb.net/node-auth';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-  .then((result) => app.listen(3000,() =>{
+  .then((result) => app.listen(process.env.PORT || 3000, () => {
     console.log('Server Started')
   }))
   .catch((err) => console.log(err));
