@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  background-image: url(bg.jpg);
+  background-size: cover;
+}
+
+.head {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+
+nav a {
+  --c: goldenrod;
+  color: var(--c);
+  font-size: 16px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+nav a span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a:hover span {
+  transform: translateY(0) scale(2);
+}
+
+nav a span:nth-child(1) {
+  --n: 1;
+}
+
+nav a span:nth-child(2) {
+  --n: 2;
+}
+
+nav a span:nth-child(3) {
+  --n: 3;
+}
+
+nav a span:nth-child(4) {
+  --n: 4;
+}
+
+.footer {
+  max-width: 70%;
+  margin: 1rem auto;
+  overflow: auto;
+}
+
+.footer,
+.footer a {
+  color: white;
+  font-size: 0.9rem;
+  padding-top: 190px;
+}
+
+.footer p {
+  margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.footer li {
+  line-height: 1.9;
+}
+
+.footer .lang-select {
+  margin-top: 2rem;
+  color: #999;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #333;
+  padding: 1rem 1.2rem;
+  border-radius: 5px;
+}
+.text-dark {
+  color: #999;
+}

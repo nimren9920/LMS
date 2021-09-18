@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="course.css" />
+    <title>Course</title>
+  </head>
+  <body style="background-image: url(course.jpg)">
+    <div class="tab">
+      <button class="tablinks" onclick="openTask(event, '1')">Task 1</button>
+      <button class="tablinks" onclick="openTask(event, '2')">Task 2</button>
+      <button class="tablinks" onclick="openTask(event, '3')">Task 3</button>
+      <button class="tablinks" onclick="openTask(event, '4')">Task 4</button>
+    </div>
+
+    <div id="1" class="tabcontent">
+      <h1 style="display: block">Task 1</h1>
+      <iframe
+        width="100%"
+        height="70%"
+        src="https://www.youtube.com/embed/yAoLSRbwxL8"
+      >
+      </iframe>
+    </div>
+
+    <div id="2" style="display: none" class="tabcontent">
+      <h3>Task 2</h3>
+      <iframe
+        width="100%"
+        height="70%"
+        src="https://www.youtube.com/embed/hnp1pt8biD4"
+      >
+      </iframe>
+    </div>
+
+    <div id="3" style="display: none" class="tabcontent">
+      <h3>Task 3</h3>
+      <iframe
+        width="100%"
+        height="70%"
+        src="https://www.youtube.com/embed/wm48_VrbB4Q"
+      >
+      </iframe>
+    </div>
+    <div id="4" style="display: none" class="tabcontent">
+      <h3>Task 4</h3>
+      <iframe
+        width="100%"
+        height="70%"
+        src="https://www.youtube.com/embed/zlRl8sJU_4I"
+      >
+      </iframe>
+    </div>
+
+    <a href="/" class="btn btn-info btn-lg">
+      <span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+  </body>
+  <script>
+    function openTask(evt, taskName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the link that opened the tab
+      document.getElementById(taskName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</html>
